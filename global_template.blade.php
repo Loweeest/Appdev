@@ -15,6 +15,8 @@
         <link rel="stylesheet" type="text/css" href="{!! asset('css/normalize.css') !!}" />
         <link rel="stylesheet" type="text/css" href="{!! asset('css/ns-default.css') !!}" />
         <link rel="stylesheet" type="text/css" href="{!! asset('css/ns-style-growl.css') !!}" />
+        <link rel="stylesheet" type="text/css" href="{!! asset('css/theme.css') !!}" />
+
     @yield('styles')
     @yield('content')
 </head>
