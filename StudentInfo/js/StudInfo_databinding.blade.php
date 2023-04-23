@@ -1,39 +1,39 @@
 <script>
 	var StudentData = [
 		{
-			ST_ID     			: "TYPE1",
-			ST_FN    			: "Noel Lehitimas",
-			ST_LN      			: "100001",
-			ST_DOB      		: "EXT_PARTNER1",
-			ST_G     			: "SOURCESYS1",
-			ST_CI    			: " ",
-			ST_EC				: " ",
-			ST_N				: " ",
-			ST_E				: " ",
-			ST_ES				: " ",
-			ST_AR				: " ",
-			ST_ACR				: " ",
-			ST_PS				: " ",
-			ST_FA				: " ",
-			ST_GD				: " "
+			ST_ID     			: "87000",
+			ST_FN    			: "Noel",
+			ST_LN      			: "Lehitimas",
+			ST_DOB      		: "Secret",
+			ST_G     			: "Male",
+			ST_CI    			: "0922123",
+			ST_EC				: "911",
+			ST_N				: "Filipino",
+			ST_E				: "Cebuano",
+			ST_ES				: "Enrolled",
+			ST_AR				: "Present",
+			ST_ACR				: "Outstanding",
+			ST_PS				: "Computer Science",
+			ST_FA				: "CHED",
+			ST_GD				: "2023"
 
 		},
 		{
-			ST_ID     			: "TYPE2",
-			ST_FN    			: "Noel Lehitimas2",
-			ST_LN      			: "100002",
-			ST_DOB      		: "EXT_PARTNER2",
-			ST_G     			: "SOURCESYS2",
-			ST_CI    			: " ",
-			ST_EC				: " ",
-			ST_N				: " ",
-			ST_E				: " ",
-			ST_ES				: " ",
-			ST_AR				: " ",
-			ST_ACR				: " ",
-			ST_PS				: " ",
-			ST_FA				: " ",
-			ST_GD				: " "
+			ST_ID     			: "123456",
+			ST_FN    			: "John Louise",
+			ST_LN      			: "Edig",
+			ST_DOB      		: "March 15",
+			ST_G     			: "Male",
+			ST_CI    			: "09317348891",
+			ST_EC				: "2300123",
+			ST_N				: "Filipino",
+			ST_E				: "Cebuano",
+			ST_ES				: "Enrolled",
+			ST_AR				: "Present",
+			ST_ACR				: "Outstanding",
+			ST_PS				: "Information Technology",
+			ST_FA				: "TESDA",
+			ST_GD				: "2023"
 		}
 	];
 
@@ -41,34 +41,34 @@
 		_filteredById : function(id){
 			filteredST = [];
 			for(let i=0; i<StudentData.length; i++){
-				if(StudentData[i].BIZPART_ID == id){
-					filteredBP.push(StudentData[i]);
+				if(StudentData[i].STUD_ID == id){
+					filteredST.push(StudentData[i]);
 				}
 			}
-			return filteredBP;
+			return filteredST;
 		},
 		_updateById : function(id){
 			let busyDialog = showBusyDialog("Please wait loading..");
 				busyDialog.open();
 			
-			StudentData.map(Stud_id => {
-				if (Stud_id.ST_ID == id) {
+			StudentData.map(STUD_ID => {
+				if (STUD_ID.ST_ID == id) {
 				 
-						Stud_id.ST_ID			= ui("STUDENT_ID").getValue().trim();
-						Stud_id.ST_FN 			= ui("FIRST_NAME").getValue().trim();
-        				Stud_id.ST_LN 			= ui("LAST_NAME").getValue().trim();
-						Stud_id.ST_DOB 			= ui("DATE_OF_BIRTH").getValue().trim();
-        				Stud_id.ST_G  			= ui("GENDER").getValue().trim();
-        				Stud_id.ST_CI 			= ui("CONTACT_INFO").getValue().trim();
-        				Stud_id.ST_EC 			= ui("EM_CONT").getValue().trim();
-        				Stud_id.ST_N  			= ui("NATIONALITY").getValue().trim();
-        				Stud_id.ST_E  			= ui("ETHNICITY").getValue().trim();
-        				Stud_id.ST_ES 			= ui("ENROLL_STAT").getValue().trim();
-        				Stud_id.ST_AR 			= ui("ATT_REC").getValue().trim();
-        				Stud_id.ST_ACR 			= ui("ACAD_REC").getValue().trim();
-        				Stud_id.ST_PS 			= ui("PROG_STUD").getValue().trim();
-        				Stud_id.ST_FA 			= ui("FINAN_AID").getValue().trim();
-        				Stud_id.ST_GD 			= ui("GRAD_DATE").getValue().trim();
+						STUD_ID.ST_ID			= ui("STUDENT_ID").getValue().trim();
+						STUD_ID.ST_FN 			= ui("FIRST_NAME").getValue().trim();
+        				STUD_ID.ST_LN 			= ui("LAST_NAME").getValue().trim();
+						STUD_ID.ST_DOB 			= ui("DATE_OF_BIRTH").getValue().trim();
+        				STUD_ID.ST_G  			= ui("GENDER").getValue().trim();
+        				STUD_ID.ST_CI 			= ui("CONTACT_INFO").getValue().trim();
+        				STUD_ID.ST_EC 			= ui("EM_CONT").getValue().trim();
+        				STUD_ID.ST_N  			= ui("NATIONALITY").getValue().trim();
+        				STUD_ID.ST_E  			= ui("ETHNICITY").getValue().trim();
+        				STUD_ID.ST_ES 			= ui("ENROLL_STAT").getValue().trim();
+        				STUD_ID.ST_AR 			= ui("ATT_REC").getValue().trim();
+        				STUD_ID.ST_ACR 			= ui("ACAD_REC").getValue().trim();
+        				STUD_ID.ST_PS 			= ui("PROG_STUD").getValue().trim();
+        				STUD_ID.ST_FA 			= ui("FINAN_AID").getValue().trim();
+        				STUD_ID.ST_GD 			= ui("GRAD_DATE").getValue().trim();
 				}
 				
 			});
@@ -77,7 +77,7 @@
 			setTimeout(() => {busyDialog.close();}, 2000);
 		},
 		
-		/*_getRadioIndex : function(id){
+		_getRadioIndex : function(id){
 			let radioButton = ui("BP_COMPANY").getButtons();
 			let selectedIndex;
 			for(let i=0; i<radioButton.length; i++){
@@ -88,7 +88,7 @@
 
 			return selectedIndex;
 
-		},*/
+		},
 
 		_validateSTUD : function(id){
 			let isExist = false;
@@ -198,7 +198,7 @@
 			
 			
 				//title and crumbs
-				//ui('STUDENT_TITLE').setText(stud_title);
+				ui('STUDENT_TITLE').setText(stud_title);
 				ui('CREATE_STUDENT_BRDCRMS').setCurrentLocationText(stud_title);
 				ui("PANEL_FORM").setTitle("Student ID "+"("+data[0].ST_ID+")");
 
@@ -295,7 +295,7 @@
 			ui('DISPLAY_STUDENT_TABLE').setModel(lt_model).bindRows("/");
 			ui("DISPLAY_STUDENT_TABLE").setVisible(true);
 			
-			ui('DISPLAY_STUDENT_TABLE_LABEL').setText("List (" + data.length + ")");
+			ui('DISPLAY_STUDENT_TABLE_LABEL').setText("Students (" + data.length + ")");
 			//fn_clear_table_sorter("DISPLAY_BP_TABLE");
 			
 		}		
@@ -326,7 +326,7 @@
 				if(screenMode._mode == "create"){
 					createSTUD();
 				}else{
-					bpDataOrganizer._updateById(screenMode._id);
+					StudentDataOrganizer._updateById(screenMode._id);
 				}
 
 				oEvt.getSource().getParent().close();
