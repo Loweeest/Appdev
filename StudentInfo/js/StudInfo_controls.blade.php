@@ -51,6 +51,7 @@
 				
 				switch(menu){
 					case "CREATE_STUDENT" :
+						go_App_Right.to('CREATE_STUDENT_PAGE')
 						screenMode._create();
 					break;
 					case "DISPLAY_STUDENT" :
@@ -449,27 +450,100 @@
 			},
 			columns: [
 			
-				new sap.ui.table.Column({label:new sap.m.Text({text:"Business Partner ID"}),
-					width:"20%",
-					sortProperty:"BIZPART_ID",
-					filterProperty:"BIZPART_ID",
-					autoResizable:true,
-					template:new sap.m.Text({text:"{BIZPART_ID}",maxLines:1}),
+				new sap.ui.table.Column({label:new sap.m.Text({text:"Student ID"}),
+					width:"180px",
+					sortProperty:"STUDENT_ID",
+					filterProperty:"STUDENT_ID",
+					//autoResizable:true,
+					template:new sap.m.Text({text:"{STUDENT_ID}",tooltip:"{STUDENT_ID}",maxLines:1}),
 				}),
-				new sap.ui.table.Column({label:new sap.m.Text({text:"Business Partner Name"}),
-					width:"40%",
-					sortProperty:"NAME1",
-					filterProperty:"NAME1",
+				new sap.ui.table.Column({label:new sap.m.Text({text:"First Name"}),
+					width:"250px",
+					sortProperty:"FIRST_NAME",
+					filterProperty:"FIRST_NAME",
 					autoResizable:true,
-					template:new sap.m.Text({text:"{NAME1}",tooltip:"{NAME1}",maxLines:1}),
+					template:new sap.m.Text({text:"{FIRST_NAME}",tooltip:"{FIRST_NAME}",maxLines:1}),
 				}),
-				new sap.ui.table.Column({label:new sap.m.Text({text:"External Partner"}),
-					width:"40%",
-					sortProperty:"EXT_PARTNER",
-					filterProperty:"EXT_PARTNER",
-					autoResizable:true,
-					template:new sap.m.Text({text:"{EXT_PARTNER}",tooltip:"{EXT_PARTNER}",maxLines:1}),
+				new sap.ui.table.Column({label:new sap.m.Text({text:"Last Name"}),
+					width:"250px",
+					sortProperty:"LAST_NAME",
+					filterProperty:"LAST_NAME",
+					template:new sap.m.Text({text:"{LAST_NAME}",tooltip:"{LAST_NAME}",maxLines:1}),
 				}),
+				new sap.ui.table.Column({label:new sap.m.Text({text:"Date of Birth"}),
+					width:"180px",
+					sortProperty:"DATE_OF_BIRTH",
+					filterProperty:"DATE_OF_BIRTH",
+					template:new sap.m.Text({text:"{DATE_OF_BIRTH}",tooltip:"{DATE_OF_BIRTH}",maxLines:1}),
+				}),
+				
+				
+				new sap.ui.table.Column({label:new sap.m.Text({text:"Gender"}),
+					width:"180px",
+					sortProperty:"GENDER",
+					filterProperty:"GENDER",
+					template:new sap.m.Text({text:"{GENDER}",tooltip:"{GENDER}",maxLines:1}),
+				}),
+				new sap.ui.table.Column({label:new sap.m.Text({text:"Contact Information"}),
+					width:"180px",
+					sortProperty:"CONTACT_INFO",
+					filterProperty:"CONTACT_INFO",
+					template:new sap.m.Text({text:"{CONTACT_INFO}",tooltip:"{CONTACT_INFO}",maxLines:1}),
+				}),
+				new sap.ui.table.Column({label:new sap.m.Text({text:"Emergency Contact Information"}),
+					width:"180px",
+					sortProperty:"EM_CONT",
+					filterProperty:"EM_CONT",
+					template:new sap.m.Text({text:"{EM_CONT}",tooltip:"{EM_CONT}",maxLines:1}),
+				}),
+				new sap.ui.table.Column({label:new sap.m.Text({text:"Nationality"}),
+					width:"180px",
+					sortProperty:"NATIONALITY",
+					filterProperty:"NATIONALITY",
+					template:new sap.m.Text({text:"{NATIONALITY}",tooltip:"{NATIONALITY}",maxLines:1}),
+				}),
+				new sap.ui.table.Column({label:new sap.m.Text({text:"Ethnicity"}),
+					width:"180px",
+					sortProperty:"ETHNICITY",
+					filterProperty:"ETHNICITY",
+					template:new sap.m.Text({text:"{ETHNICITY}",tooltip:"{ETHNICITY}",maxLines:1}),
+				}),
+				new sap.ui.table.Column({label:new sap.m.Text({text:"Enrollment Status"}),
+					width:"180px",
+					sortProperty:"ENROLL_STAT",
+					filterProperty:"ENROLL_STAT",
+					template:new sap.m.Text({text:"{ENROLL_STAT}",tooltip:"{ENROLL_STAT}",maxLines:1}),
+				}),
+				new sap.ui.table.Column({label:new sap.m.Text({text:"Attendance Record"}),
+					width:"180px",
+					sortProperty:"ATT_REC",
+					filterProperty:"ATT_REC",
+					template:new sap.m.Text({text:"{ATT_REC}",tooltip:"{ATT_REC}",maxLines:1}),
+				}),
+				new sap.ui.table.Column({label:new sap.m.Text({text:"Academic Record"}),
+					width:"180px",
+					sortProperty:"ACAD_REC",
+					filterProperty:"ACAD_REC",
+					template:new sap.m.Text({text:"{ACAD_REC}",tooltip:"{ACAD_REC}",maxLines:1}),
+				}),
+				new sap.ui.table.Column({label:new sap.m.Text({text:"Program of Study"}),
+					width:"180px",
+					sortProperty:"PROG_STUD",
+					filterProperty:"PROG_STUD",
+					template:new sap.m.Text({text:"{PROG_STUD}",tooltip:"{PROG_STUD}",maxLines:1}),
+				}),
+				new sap.ui.table.Column({label:new sap.m.Text({text:"Financial Aid Information"}),
+					width:"180px",
+					sortProperty:"FINAN_AID",
+					filterProperty:"FINAN_AID",
+					template:new sap.m.Text({text:"{FINAN_AID}",tooltip:"{FINAN_AID}",maxLines:1}),
+				}),
+				new sap.ui.table.Column({label:new sap.m.Text({text:"Graduate Date"}),
+					width:"180px",
+					sortProperty:"GRAD_DATE",
+					filterProperty:"GRAD_DATE",
+					template:new sap.m.Text({text:"{GRAD_DATE}",tooltip:"{GRAD_DATE}",maxLines:1}),
+				})
 				
 			]
 		});
@@ -542,12 +616,12 @@
 
 
 		var lv_table = new sap.ui.table.Table("STUDENT_LISTING_TABLE",{
-			visibleRowCountMode:"Auto",
-			selectionMode:"None",
-			enableCellFilter: true,
-			enableColumnReordering:false,
-			columnResize: false,
-			filter:function(oEvt){
+				visibleRowCountMode:"Auto",
+				selectionMode:"None",
+				enableCellFilter: true,
+				enableColumnReordering:false,
+				columnResize: false,
+				filter:function(oEvt){
 				oEvt.getSource().getBinding("rows").attachChange(function(oEvt){
 					var lv_row_count = oEvt.getSource().iLength;
 					ui('STUDENT_LISTING_LABEL').setText("Students (" + lv_row_count + ")");
@@ -557,7 +631,7 @@
                 new sap.m.Toolbar({
                     content: [
                         new sap.m.Label("STUDENT_LISTING_LABEL", {
-                            text:"Business Partner (0)"
+                            text:"Students (0)"
                         }),
                         new sap.m.ToolbarSpacer(),
                         new sap.m.Button("BTN_DOWNLOAD", {
